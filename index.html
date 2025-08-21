@@ -14,20 +14,19 @@
     let replay = "yes";
 //while loop to allow for replaying without functions. While instead of for since unknown number of iterations
 
-    let amessage;
-//here to allow calling in the if else loop below
+    for (i=0; i < 1; i++)
     
-    let username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
-    console.log(username);
-    if (username === null) {
-      alert("Please Press F5 to Play Again")
-    }
-    else{
-      let amessage = "Hi " + username + " Let\'s Play!!";
-      alert(amessage)
+      let username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
+      console.log(username);
+      if (username === null) {
+        alert("Please Press F5 to Play Again")
+        break;
       }
-    }
-//check to see if player hits cancel here, while loop there to allow exit
+      else{
+        let amessage = "Hi " + username + " Let\'s Play!!";
+        alert(amessage)
+        }
+//check to see if player hits cancel here, otherwise continues with a prompt
     
     while (replay === "yes"){  //Moved so username would only be asked for once
     
@@ -106,8 +105,8 @@
           alert("invalid input. Please Press F5 to Play Again");
           replay = "no";
           break;
+        }
       }
-    }
 //Reads input to determine wheter the player wants to play again. If no exits while loop, if yes restarts loop
       
   </script>
