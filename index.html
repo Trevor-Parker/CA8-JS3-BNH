@@ -14,22 +14,33 @@
     let replay = "yes";
 //while loop to allow for replaying without functions. While instead of for since unknown number of iterations
   
-    while (replay === "yes") {
+    while (replay === "yes") { //Want to change this so it doesnt ask for name everytime
       let username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
       console.log(username);
+      if (username === null) {
+        alert("Please Press F5 to Play Again")
+        break;
+//check to see if player hits cancel here
+        
       let amessage = "Hi " + username + " Let\'s Play!!";
       alert(amessage);
-// Lets user choose name and repeats it with a prompt 
+//returns players name in a alert 
     
       const options = ["bear", "ninja", "hunter"];
 //array for computer to randomize to. Math Random * length will allow it to have a maximum of 2
       
       let userChoice = prompt("Who are you: Bear, Ninja, or Hunter").toLowerCase();
       if (!options.includes(userChoice)) {
-        userChoice = ("Invalid Entry Please \n press F5 to Play Again")
+        alert("Invalid Entry Please \n press F5 to Play Again")
         break;
       }
-//Checks if user code is valid, if not ends game
+//Checks if user code is valid, if not ends game      
+      
+      if (userChoice === null) {
+        alert("Please Press F5 to Play Again")
+        break;
+      }
+//Checks to see if user hits cancel on user choice
       
       let computerChoice = options[Math.floor(Math.random() * options.length)];
       console.log(computerChoice);
@@ -70,7 +81,11 @@
       
       replay = prompt("Do you want to play again? Yes or no").toLowerCase();
 //Asks to play again
-      
+      if (replay === null) {
+        alert("Please Press F5 to Play Again")
+        break;
+//Checks if player hits cancel, if so prompts a Play Again message
+        
       switch(replay) {
         case "yes":
           break;
