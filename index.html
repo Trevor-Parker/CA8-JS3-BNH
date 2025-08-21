@@ -12,10 +12,14 @@
 <!-- PlaceHolder for after game -->
   <script>
     let replay = "yes";
-//while loop to allow for replaying without functions. While instead of for since unknown number of iterations
+//allows for replaying
 
-    for (i=0; i < 1; i++)
-    
+    let username;
+//allows for username to be called out of for loop
+
+    for (i=0; i < 1; i++){
+//runs a one time check for username
+      
       let username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
       console.log(username);
       if (username === null) {
@@ -26,6 +30,7 @@
         let amessage = "Hi " + username + " Let\'s Play!!";
         alert(amessage)
         }
+    }
 //check to see if player hits cancel here, otherwise continues with a prompt
     
     while (replay === "yes"){  //Moved so username would only be asked for once
