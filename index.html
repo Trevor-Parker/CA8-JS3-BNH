@@ -26,7 +26,8 @@
       
       let userChoice = prompt("Who are you: Bear, Ninja, or Hunter").toLowerCase();
       if (!options.includes(userChoice)) {
-        userChoice = ("Invalid Entry"<br>"Please press F5 to Play Again")
+        userChoice = ("Invalid Entry Please \n press F5 to Play Again")
+        break;
       }
 //Checks if user code is valid, if not ends game
       
@@ -78,7 +79,7 @@
           replay = "no";
           break;
         default:
-          alert("invalid input. Exiting game.");
+          alert("invalid input. Please Press F5 to Play Again");
           replay = "no";
           break;
       }
