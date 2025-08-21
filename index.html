@@ -22,12 +22,18 @@
 // Lets user choose name and repeats it with a prompt 
     
       const options = ["bear", "ninja", "hunter"];
-//array for computer to read
+//array for computer to randomize to. Math Random * length will allow it to have a maximum of 2
       
       let userChoice = prompt("Who are you: Bear, Ninja, or Hunter").toLowerCase();
-      let computerChoice = "bear";
-// Locks Computer choice, defines valid choices, and asks the player for theirs
-
+      if (!options.includes(userChoice)) {
+        userChoice = ("Invalid Entry"<br>"Please press F5 to Play Again")
+      }
+//Checks if user code is valid, if not ends game
+      
+      let computerChoice = options[Math.floor(Math.random() * options.length)];
+      console.log(computerChoice);
+// Randomizes Computer choice
+      
       let result;
       if (
         (userChoice === "bear" && computerChoice === "bear")||
