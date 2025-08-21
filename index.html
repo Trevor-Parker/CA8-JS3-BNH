@@ -17,20 +17,12 @@
     let username;
 //allows for username to be called out of for loop
 
-    while (!username)
-      username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
-      console.log(username);
-//ensures as long as there is no username it will ask
+    username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
+    console.log(username);
     
-      if (username === null) {
-        alert("Thank you for playing, Press F5 to Play Again")
-        break;
-      }
-      else {
-        let amessage = "Hi " + username + " Let\'s Play!!";
-        alert(amessage)
-        }
-    }
+    let amessage = "Hi " + username + " Let\'s Play!!";
+    alert(amessage)
+
 //check to see if player hits cancel here, otherwise continues with a prompt, not sure how to declare an invalid username
     
     while (replay === "yes"){  //Moved so username would only be asked for once
