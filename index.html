@@ -23,14 +23,13 @@
       alert("Please Press F5 to Play Again")
     }
     else{
+      let amessage = "Hi " + username + " Let\'s Play!!";
       alert(amessage)
       }
     }
 //check to see if player hits cancel here, while loop there to allow exit
     
     while (replay === "yes"){  //Moved so username would only be asked for once
-      let amessage = "Hi " + username + " Let\'s Play!!";
-//returns players name in a alert 
     
       const options = ["bear", "ninja", "hunter"];
 //array for computer to randomize to. Math Random * length will allow it to have a maximum of 2
