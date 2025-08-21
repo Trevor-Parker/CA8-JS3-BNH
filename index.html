@@ -12,29 +12,49 @@
 <!-- PlaceHolder for after game -->
   <script>
     let replay = "yes";
-//while loop to allow for replaying without functions. While instead of for since unknown number of iterations
-  
-    while (replay === "yes") {
-      let username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
-      console.log(username);
-      let amessage = "Hi " + username + " Let\'s Play!!";
-      alert(amessage);
-// Lets user choose name and repeats it with a prompt 
+//allows for replaying
+
+    let username;
+//allows for username to be called out of for loop
+
+    username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
+    console.log(username);
+    
+    let amessage = "Hi " + username + " Let\'s Play!!";
+    alert(amessage)
+
+//check to see if player hits cancel here, otherwise continues with a prompt, not sure how to declare an invalid username
+    
+    while (replay === "yes"){  //Moved so username would only be asked for once
     
       const options = ["bear", "ninja", "hunter"];
-      let userChoice = prompt("Who are you: Bear, Ninja, or Hunter").toLowerCase();
-      let computerChoice = "bear";
-// Locks Computer choice, defines valid choices, and asks the player for theirs
+//array for computer to randomize to. Math Random * length will allow it to have a maximum of 2
+      
+      let userChoice = prompt("Who are you: Bear, Ninja, or Hunter");
+        if (userChoice === null) {
+        alert("Please Press F5 to Play Again")
+        break;
+      }
+//Checks to see if user hits cancel on user choice
+      userChoice = userChoice.toLowerCase();
+//avoids a syntax error in attempting to lowercase null
+      
+      if (!options.includes(userChoice)) {
+        alert("Invalid Entry Please \n press F5 to Play Again")
+        break;
+      }
+//Checks if player entry is valid, if not ends game      
 
+      let computerChoice = options[Math.floor(Math.random() * options.length)];
+      console.log(computerChoice);
+// Randomizes Computer choice
+      
       let result;
-      if (
-        (userChoice === "bear" && computerChoice === "bear")||
-        (userChoice === "ninja" && computerChoice === "ninja")||
-        (userChoice === "hunter" && computerChoice === "hunter")
-      )
-      {
+// Allows result to be called outside the if block
+      if (userChoice === computerChoice) {
         result = "Its a Tie!";
       }
+//covers the 3 options for a tie
       else if (
         (userChoice === "bear" && computerChoice === "ninja")||
         (userChoice === "ninja" && computerChoice === "hunter")||
@@ -43,10 +63,11 @@
       {
         result = "You Win!";
       }
+//Covers the 3 winning scenarios
       else {
         result = "You lose!";
       }
-//Prompts depending on different choices
+//covers the 3 losing scenarios
     
       document.getElementById("demo").innerHTML = `
         <br>${username}, You Picked ${userChoice}!
@@ -59,9 +80,17 @@
       console.log(result);
 //Writes out choices to the screen/webpage
       
-      replay = prompt("Do you want to play again? Yes or no").toLowerCase();
+      replay = prompt("Do you want to play again? Yes or no")
 //Asks to play again
-      
+      if (replay === null) {
+        alert("Please Press F5 to Play Again")
+        break;
+      }
+//Checks if player hits cancel, if so prompts a Play Again message
+
+      replay =replay.toLowerCase();
+//Covers for the syntax error of lowercasing null
+        
       switch(replay) {
         case "yes":
           break;
@@ -70,12 +99,12 @@
           replay = "no";
           break;
         default:
-          alert("invalid input. Exiting game.");
+          alert("invalid input. Please Press F5 to Play Again");
           replay = "no";
           break;
+        }
       }
-    }
-//Reads input to determine wheter the player wants to play again. If no exits while loop, if yes resarts loop
+//Reads input to determine wheter the player wants to play again. If no exits while loop, if yes restarts loop
       
   </script>
 </body>
