@@ -14,15 +14,14 @@
     let replay = "yes";
 //while loop to allow for replaying without functions. While instead of for since unknown number of iterations
   
-    while (replay === "yes") { //Want to change this so it doesnt ask for name everytime
-      let username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
-      console.log(username);
-      if (username === null) {
-        alert("Please Press F5 to Play Again")
-        break;
-      }
+    let username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
+    console.log(username);
+    if (username === null) {
+      alert("Please Press F5 to Play Again")
+      break;
+    }
 //check to see if player hits cancel here
-        
+    while (replay === "yes"){  //Moved so username would only be asked for once
       let amessage = "Hi " + username + " Let\'s Play!!";
       alert(amessage);
 //returns players name in a alert 
