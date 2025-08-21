@@ -17,15 +17,13 @@
     let username;
 //allows for username to be called out of for loop
 
-    for (let i=0; i < 1; i++){
-//runs a one time check for username
-      
+    while (!username)
       username = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started");
       console.log(username);
-      while (username === null);
-        username = prompt("Please enter your name to get started");
+//ensures as long as there is no username it will ask
+    
       if (username === null) {
-        alert("Please Press F5 to Play Again")
+        alert("Thank you for playing, Press F5 to Play Again")
         break;
       }
       else {
